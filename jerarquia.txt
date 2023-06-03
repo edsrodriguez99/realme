@@ -1,0 +1,103 @@
+frontend:
+-Html -Css -Javascript
+
+backend:
+-Python(Django) -MySQL
+
+
+old searchbar
+{
+<form action="/buscar" method="get" class="nb">
+  <input type="text" name="q" placeholder="Escribe tu zona...">
+  <input type="submit" value="Buscar">
+</form>
+}
+
+
+
+
+//top searchbar (problema con el texto)
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-right: -3px;
+    margin-top: -15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .searchbox {
+        position:top;
+        display: block;
+        width: 100%;
+        max-width: 60px;
+        transition: 0.5s ease-in-out;
+        overflow: hidden;
+        transform: scale(0.55);
+
+        .searchbox__input {
+            display:block;
+            appearance: none;
+            width: 100%;
+        
+            border: none;
+            outline: none;
+            border-radius: 200px;
+        
+            background-color: rgb(129, 41, 41);
+        
+            padding: 15px;
+            color:rgba(94, 184, 77, 0);
+            font-size:20px;
+            cursor: pointer;
+            transition: 0.4s linear;
+
+            &::placeholder {
+                color: #24233A;
+            }
+        }
+        .searchbox__icon {
+            right: calc(53px/2);
+            top: 60%;
+            transform: translate(50%, -50%) scale(1);
+
+            width: 30px;
+            height: 53px;
+            margin-top: -30px;
+            margin-left: 1px;
+            pointer-events: none;
+            
+            path {
+                fill: #fff;
+                transition: 0.4s linear;
+            }
+        }
+        &:focus-within {
+            max-width: 300px;
+
+            .searchbox__input {
+                background-color: #a30d47;
+                padding-right: 50px;
+                box-shadow: inset 0px 0px 100px rgba(14, 13, 10, 0.1);
+                border-radius: 10px;
+            }
+            .searchbox__icon {
+                margin-left: 240px;
+                path {
+                    fill: #24233A;
+                }
+            }
+        }
+    }
+}
+
+COLOR SECUNDARIO # rgba(8, 49, 233, 0.603) quizas se vea mejor cuando le bajo un poco la opacidad (aun por escoger, probablemente con menor opacidad)
+
+#Problemas
+-Arreglar desplazamiento del header al momento de desplegar el boton buscar (|searchbar|)
